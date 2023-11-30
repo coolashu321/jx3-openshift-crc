@@ -6,6 +6,10 @@ data:
       repos:
       - coolashu321/jx3-openshift-crc
       require_self_approval: true
+    - lgtm_acts_as_approve: true
+      repos:
+      - coolashu321/jx-gradle-example
+      require_self_approval: true
     cat: {}
     cherry_pick_unapproved: {}
     config_updater:
@@ -16,6 +20,11 @@ data:
         env/prow/plugins.yaml:
           name: plugins
     external_plugins:
+      coolashu321/jx-gradle-example:
+      - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
+        name: cd-indicators
+      - endpoint: http://lighthouse-webui-plugin.jx.svc.cluster.local/lighthouse/events
+        name: lighthouse-webui-plugin
       coolashu321/jx3-openshift-crc:
       - endpoint: http://cd-indicators.jx.svc.cluster.local/lighthouse/events
         name: cd-indicators
@@ -26,6 +35,20 @@ data:
       additional_labels: null
     owners: {}
     plugins:
+      coolashu321/jx-gradle-example:
+      - approve
+      - assign
+      - help
+      - hold
+      - lgtm
+      - lifecycle
+      - override
+      - size
+      - trigger
+      - wip
+      - cat
+      - dog
+      - pony
       coolashu321/jx3-openshift-crc:
       - config-updater
       - approve
@@ -53,6 +76,11 @@ data:
     - repos:
       - coolashu321/jx3-openshift-crc
       trusted_org: coolashu321
+    - repos:
+      - coolashu321/jx-gradle-example
+      trusted_org: coolashu321
+    welcome:
+    - message_template: Welcome
 kind: ConfigMap
 metadata:
   creationTimestamp: null

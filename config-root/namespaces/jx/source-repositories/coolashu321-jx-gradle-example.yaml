@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: coolashu321
+    provider: github
+    repository: jx-gradle-example
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: coolashu321-jx-gradle-example
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/coolashu321/jx-gradle-example.git
+  org: coolashu321
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx-gradle-example
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/coolashu321/jx-gradle-example
